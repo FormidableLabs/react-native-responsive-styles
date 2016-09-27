@@ -2,6 +2,13 @@
 
 React Native styles that respond to orientation change.
 
+### How-to
+
+For the time being, install straight from GitHub
+```
+npm i --save https://github.com/FormidableLabs/react-native-responsive-styles
+```
+
 Simply import `StyleSheet` and any React components from `react-native-responsive-styles` instead of `react-native`
 ```js
 import {
@@ -40,6 +47,8 @@ const styles = StyleSheet.create({
   }
 });
 ```
+
+Plain style objects will work as well, as long as you use the components from this package.
 
 ### Demo
 ![Demo](/docs/responsive-styles.gif)
