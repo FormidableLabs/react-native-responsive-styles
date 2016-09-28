@@ -6,12 +6,11 @@ import configureLayoutAnimation from './lib/configureLayoutAnimation';
 import createResponsiveComponent from './lib/createResponsiveComponent';
 import createResponsiveStyleSheet from './lib/createResponsiveStyleSheet';
 
-
 const wrap = createResponsiveComponent;
 
 module.exports = {
 
-  // wrap native modules
+  // wrap native components
 
   ActivityIndicator: wrap(ReactNative.ActivityIndicator),
   ActivityIndicatorIOS: wrap(ReactNative.ActivityIndicatorIOS),
@@ -66,6 +65,14 @@ module.exports = {
      * custom `landscape` and `portrait` keys
      */
     create: createResponsiveStyleSheet,
+
+    /**
+     * Expose a method for making custom responsive components
+     *
+     * class CustomComponent extends React.Component { ... }
+     * export default StyleSheet.makeResponsive(CustomComponent)
+     */
+    makeResponsive: createResponsiveComponent,
 
     /**
      * if you want to animate the orientation change
