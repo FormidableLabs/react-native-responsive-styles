@@ -4,7 +4,10 @@
   "description": "React Native styles that respond to device orientation change",
   "keywords": [
     "react",
-    "native",
+    "react-component",
+    "react-native",
+    "ios",
+    "android",
     "responsive",
     "orientation"
   ],
