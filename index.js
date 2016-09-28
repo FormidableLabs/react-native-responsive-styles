@@ -1,6 +1,8 @@
+// @flow
+
 import ReactNative from 'react-native';
 
-import animateOrientationChange from './lib/animateOrientationChange';
+import configureLayoutAnimation from './lib/configureLayoutAnimation';
 import createResponsiveComponent from './lib/createResponsiveComponent';
 import createResponsiveStyleSheet from './lib/createResponsiveStyleSheet';
 
@@ -11,8 +13,6 @@ const supportedComponentTypes = [
   'DatePickerIOS',
   'DrawerLayoutAndroid',
   'Image',
-  'ImageEditor',
-  'ImageStore',
   'KeyboardAvoidingView',
   'ListView',
   'MapView',
@@ -52,14 +52,43 @@ const supportedComponentTypes = [
 
 module.exports = {};
 
+// generate a higher order component for each supported native component type
 supportedComponentTypes.forEach((className) => {
   module.exports[className] = createResponsiveComponent(ReactNative[className]);
 });
 
+// extend default StyleSheet module
 module.exports.StyleSheet = {
+
   ...ReactNative.StyleSheet,
-  animate: animateOrientationChange,
+
+  /**
+   * override StyleSheet.create({...}) to support
+   * custom `landscape` and `portrait` keys
+   */
   create: createResponsiveStyleSheet,
+
+  /**
+   * if you want to animate the orientation change
+   * transitions, call this with one of the valid
+   * LayoutAnimation types: 'spring'|'easeInEaseOut'|'linear':
+   *
+   * StyleSheet.configureLayoutAnimation('spring')
+   *
+   * Alternatively acceps a function to call when
+   * orientation changes
+   */
+  configureLayoutAnimation,
+
+  /**
+   * A convenience style to hide an element entirely, e.g.
+   * StyleSheet.create({
+   *  elementStyle: {
+   *    portrait: StyleSheet.hidden,
+   *    landscape: {flex: 1}
+   *  }
+   * })
+   */
   hidden: {
     flex: 0,
     width: 0,

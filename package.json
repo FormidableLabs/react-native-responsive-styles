@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint index.js lib/",
+    "flow": "flow check",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
@@ -19,6 +20,7 @@
     "eslint-plugin-flowtype": "^2.19.0",
     "eslint-plugin-import": "^1.16.0",
     "eslint-plugin-react": "^6.0.0",
+    "flow-bin": "^0.32.0",
     "react": "15.3.2",
     "react-native": "0.34.0"
   },
