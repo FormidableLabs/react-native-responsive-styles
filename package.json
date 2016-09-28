@@ -23,9 +23,9 @@
   "author": "Jani Eväkallio",
   "license": "MIT",
   "scripts": {
-    "lint": "eslint index.js lib/",
+    "lint": "eslint index.js lib",
     "flow": "flow check",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run lint && npm run flow"
   },
   "dependencies": {
     "react-native-orientation-listener": "0.0.4"
@@ -33,7 +33,7 @@
   "devDependencies": {
     "babel-eslint": "^6.0.2",
     "eslint": "^2.10.2",
-    "eslint-config-formidable": "^1.0.1",
+    "eslint-config-formidable": "^2.0.1",
     "eslint-plugin-babel": "^3.2.0",
     "eslint-plugin-filenames": "^1.1.0",
     "eslint-plugin-flowtype": "^2.19.0",
