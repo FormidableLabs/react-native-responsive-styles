@@ -14,6 +14,7 @@ Simply import `StyleSheet` and any React components from `react-native-responsiv
 import {
   View,
   Image,
+  ScrollView,
   StyleSheet
 } from 'react-native-responsive-styles';
 ```
@@ -48,11 +49,54 @@ const styles = StyleSheet.create({
 });
 ```
 
-Plain style objects will work as well, as long as you use the components from this package.
+Usage of `StyleSheet.create` is not required. Plain style objects will work as well, as long as you use the React components from this package.
+
+That's it!
 
 ### Demo
 ![Demo](/docs/responsive-styles.gif)
 
+### Advanced features
+
+#### Animate transitions
+
+You can apply a [LayoutAnimation](https://facebook.github.io/react-native/docs/layoutanimation.html) to orientation changes. Valid animation values are `spring`, `linear` and `easeInEaseOut`.
+```js
+StyleSheet.configureLayoutAnimation('spring');
+```
+
+The default behaviour is no animation, but configuring one is recommended to avoid visual glitches when rearranging elements.
+
+#### Make your custom components responsive
+
+To add support for orientation-specific styles to your own components or other third-party components, wrap them in a higher-order component with `makeResponsive`:
+```js
+import React from 'react';
+import { makeResponsive } from 'react-native-responsive-styles';
+
+class CustomComponent extends React.Component({
+  //...
+});
+
+export default makeResponsive(CustomComponent);
+```
+
+In most cases this should not be required. You can simply nest your component in a responsive `View`.
+
+#### Hiding elements
+
+A common use case is to hide an element entirely in one orientation. You can use `StyleSheet.hidden` for that:
+```js
+const styles = StyleSheet.create({
+  landscapeOnly: {
+    flex: 1,
+    portrait: StyleSheet.hidden
+  }
+})
+```
+
 ### Please note
 
-This project is in a pre-pre-**pre**-release state. One day it may be in a release state.
+This project is in a pre-release state. The API may be considered relatively stable, but changes may still occur.
+
+[MIT licensed](LICENSE)
