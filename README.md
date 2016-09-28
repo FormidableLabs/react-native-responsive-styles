@@ -1,15 +1,28 @@
-# react-native-responsive-styles
+<h1 align="center">react-native-responsive-styles</h1>
 
-React Native styles that respond to orientation change.
+<p align="center">
+  <a title='License' href="https://raw.githubusercontent.com/FormidableLabs/react-native-responsive-styles/master/LICENSE">
+    <img src='https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square' />
+  </a>
+  <a href="https://badge.fury.io/js/react-native-responsive-styles">
+    <img src="https://badge.fury.io/js/react-native-responsive-styles.svg" alt="npm version" height="18">
+  </a>
+</p>
+
+<h4 align="center">
+  React Native styles that respond to device orientation change
+</h4>
+
+***
 
 ### How-to
 
-For the time being, install straight from GitHub
+Installation:
 ```
-npm i --save https://github.com/FormidableLabs/react-native-responsive-styles
+npm i --save react-native-responsive-styles
 ```
 
-Simply import `StyleSheet` and any React components from `react-native-responsive-styles` instead of `react-native`
+You can now import `StyleSheet` and any React components from `react-native-responsive-styles` instead of `react-native`:
 ```js
 import {
   View,

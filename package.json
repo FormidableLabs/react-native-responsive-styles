@@ -1,8 +1,24 @@
 {
   "name": "react-native-responsive-styles",
-  "version": "0.1.0",
-  "description": "React Native styles that respond to orientation change",
+  "version": "0.2.0",
+  "description": "React Native styles that respond to device orientation change",
+  "keywords": [
+    "react",
+    "native",
+    "responsive",
+    "orientation"
+  ],
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FormidableLabs/react-native-responsive-styles.git"
+  },
+  "bugs": {
+    "url": "https://github.com/FormidableLabs/react-native-responsive-styles/issues"
+  },
+  "homepage": "https://github.com/FormidableLabs/react-native-responsive-styles#readme",
+  "author": "Jani Eväkallio",
+  "license": "MIT",
   "scripts": {
     "lint": "eslint index.js lib/",
     "flow": "flow check",
@@ -23,15 +39,5 @@
     "flow-bin": "^0.32.0",
     "react": "15.3.2",
     "react-native": "0.34.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/FormidableLabs/react-native-responsive-styles.git"
-  },
-  "author": "",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/FormidableLabs/react-native-responsive-styles/issues"
-  },
-  "homepage": "https://github.com/FormidableLabs/react-native-responsive-styles#readme"
+  }
 }
