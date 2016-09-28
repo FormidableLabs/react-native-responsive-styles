@@ -6,95 +6,93 @@ import configureLayoutAnimation from './lib/configureLayoutAnimation';
 import createResponsiveComponent from './lib/createResponsiveComponent';
 import createResponsiveStyleSheet from './lib/createResponsiveStyleSheet';
 
-const supportedComponentTypes = [
-  'ActivityIndicator',
-  'ActivityIndicatorIOS',
-  'ART',
-  'DatePickerIOS',
-  'DrawerLayoutAndroid',
-  'Image',
-  'KeyboardAvoidingView',
-  'ListView',
-  'MapView',
-  'Modal',
-  'Navigator',
-  'NavigatorIOS',
-  'Picker',
-  'PickerIOS',
-  'ProgressBarAndroid',
-  'ProgressViewIOS',
-  'ScrollView',
-  'SegmentedControlIOS',
-  'Slider',
-  'SliderIOS',
-  'SnapshotViewIOS',
-  'Switch',
-  'RecyclerViewBackedScrollView',
-  'RefreshControl',
-  'StatusBar',
-  'SwipeableListView',
-  'SwitchAndroid',
-  'SwitchIOS',
-  'TabBarIOS',
-  'Text',
-  'TextInput',
-  'ToastAndroid',
-  'ToolbarAndroid',
-  'Touchable',
-  'TouchableHighlight',
-  'TouchableNativeFeedback',
-  'TouchableOpacity',
-  'TouchableWithoutFeedback',
-  'View',
-  'ViewPagerAndroid',
-  'WebView'
-];
 
-module.exports = {};
+const wrap = createResponsiveComponent;
 
-// generate a higher order component for each supported native component type
-supportedComponentTypes.forEach((className) => {
-  module.exports[className] = createResponsiveComponent(ReactNative[className]);
-});
+module.exports = {
 
-// extend default StyleSheet module
-module.exports.StyleSheet = {
+  // wrap native modules
 
-  ...ReactNative.StyleSheet,
+  ActivityIndicator: wrap(ReactNative.ActivityIndicator),
+  ActivityIndicatorIOS: wrap(ReactNative.ActivityIndicatorIOS),
+  ART: wrap(ReactNative.ART),
+  DatePickerIOS: wrap(ReactNative.DatePickerIOS),
+  DrawerLayoutAndroid: wrap(ReactNative.DrawerLayoutAndroid),
+  Image: wrap(ReactNative.Image),
+  KeyboardAvoidingView: wrap(ReactNative.KeyboardAvoidingView),
+  ListView: wrap(ReactNative.ListView),
+  MapView: wrap(ReactNative.MapView),
+  Modal: wrap(ReactNative.Modal),
+  Navigator: wrap(ReactNative.Navigator),
+  NavigatorIOS: wrap(ReactNative.NavigatorIOS),
+  Picker: wrap(ReactNative.Picker),
+  PickerIOS: wrap(ReactNative.PickerIOS),
+  ProgressBarAndroid: wrap(ReactNative.ProgressBarAndroid),
+  ProgressViewIOS: wrap(ReactNative.ProgressViewIOS),
+  ScrollView: wrap(ReactNative.ScrollView),
+  SegmentedControlIOS: wrap(ReactNative.SegmentedControlIOS),
+  Slider: wrap(ReactNative.Slider),
+  SliderIOS: wrap(ReactNative.SliderIOS),
+  SnapshotViewIOS: wrap(ReactNative.SnapshotViewIOS),
+  Switch: wrap(ReactNative.Switch),
+  RecyclerViewBackedScrollView: wrap(ReactNative.RecyclerViewBackedScrollView),
+  RefreshControl: wrap(ReactNative.RefreshControl),
+  StatusBar: wrap(ReactNative.StatusBar),
+  SwipeableListView: wrap(ReactNative.SwipeableListView),
+  SwitchAndroid: wrap(ReactNative.SwitchAndroid),
+  SwitchIOS: wrap(ReactNative.SwitchIOS),
+  TabBarIOS: wrap(ReactNative.TabBarIOS),
+  Text: wrap(ReactNative.Text),
+  TextInput: wrap(ReactNative.TextInput),
+  ToastAndroid: wrap(ReactNative.ToastAndroid),
+  ToolbarAndroid: wrap(ReactNative.ToolbarAndroid),
+  Touchable: wrap(ReactNative.Touchable),
+  TouchableHighlight: wrap(ReactNative.TouchableHighlight),
+  TouchableNativeFeedback: wrap(ReactNative.TouchableNativeFeedback),
+  TouchableOpacity: wrap(ReactNative.TouchableOpacity),
+  TouchableWithoutFeedback: wrap(ReactNative.TouchableWithoutFeedback),
+  View: wrap(ReactNative.View),
+  ViewPagerAndroid: wrap(ReactNative.ViewPagerAndroid),
+  WebView: wrap(ReactNative.WebView),
 
-  /**
-   * override StyleSheet.create({...}) to support
-   * custom `landscape` and `portrait` keys
-   */
-  create: createResponsiveStyleSheet,
+  // extend default StyleSheet module
 
-  /**
-   * if you want to animate the orientation change
-   * transitions, call this with one of the valid
-   * LayoutAnimation types: 'spring'|'easeInEaseOut'|'linear':
-   *
-   * StyleSheet.configureLayoutAnimation('spring')
-   *
-   * Alternatively acceps a function to call when
-   * orientation changes
-   */
-  configureLayoutAnimation,
+  StyleSheet: {
 
-  /**
-   * A convenience style to hide an element entirely, e.g.
-   * StyleSheet.create({
-   *  elementStyle: {
-   *    portrait: StyleSheet.hidden,
-   *    landscape: {flex: 1}
-   *  }
-   * })
-   */
-  hidden: {
-    flex: 0,
-    width: 0,
-    height: 0,
-    overflow: 'hidden'
+    ...ReactNative.StyleSheet,
+
+    /**
+     * override StyleSheet.create({...}) to support
+     * custom `landscape` and `portrait` keys
+     */
+    create: createResponsiveStyleSheet,
+
+    /**
+     * if you want to animate the orientation change
+     * transitions, call this with one of the valid
+     * LayoutAnimation types: 'spring'|'easeInEaseOut'|'linear':
+     *
+     * StyleSheet.configureLayoutAnimation('spring')
+     *
+     * Alternatively acceps a function to call when
+     * orientation changes
+     */
+    configureLayoutAnimation,
+
+    /**
+     * A convenience style to hide an element entirely, e.g.
+     * StyleSheet.create({
+     *  elementStyle: {
+     *    portrait: StyleSheet.hidden,
+     *    landscape: {flex: 1}
+     *  }
+     * })
+     */
+    hidden: {
+      flex: 0,
+      width: 0,
+      height: 0,
+      overflow: 'hidden'
+    }
   }
 };
-
-module.exports.default = module.exports;
