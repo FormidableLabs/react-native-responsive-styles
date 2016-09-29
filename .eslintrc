@@ -3,20 +3,19 @@
     "formidable/configurations/es6-react",
     "plugin:flowtype/recommended"
   ],
-  "parser": "babel-eslint",
   "plugins": [
-    "babel",
-    "react",
     "flowtype"
   ],
-  "ecmaFeatures": {
-    "jsx": true,
-    "restParams": true,
-    "spread": true,
-    "experimentalObjectRestSpread": true
-  },
   "rules": {
     "quotes": ["error", "single", { "avoidEscape": true }],
-    "react/prefer-es6-class": 0
+    "react/prefer-es6-class": 0,
+
+    // Allow camelCase *only* for `export default <name>` matched filename.
+    //
+    // TODO: Review `eslint-config-formidable` discussion after decisions and
+    // potentially retrofit this repo to dash-case filenames.
+    // https://github.com/FormidableLabs/eslint-config-formidable/issues/29
+    "filenames/match-regex": ["error", "^[a-z0-9\\-\\.]+$", true],
+    "filenames/match-exported": "error"
   }
 }
