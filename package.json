@@ -39,7 +39,7 @@
     "eslint-plugin-flowtype": "^2.19.0",
     "eslint-plugin-import": "^1.16.0",
     "eslint-plugin-react": "^6.0.0",
-    "flow-bin": "^0.32.0",
+    "flow-bin": "^0.35.0",
     "react": "15.4.2",
     "react-native": "0.39.0"
   }
