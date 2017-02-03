@@ -13,11 +13,14 @@ module.exports = {
   // wrap native components
 
   ActivityIndicator: wrap(ReactNative.ActivityIndicator),
-  ActivityIndicatorIOS: wrap(ReactNative.ActivityIndicatorIOS),
+  ActivityIndicatorIOS: wrap(ReactNative.ActivityIndicatorIOS), // To support older RN
   ART: wrap(ReactNative.ART),
+  Button: wrap(ReactNative.Button),
   DatePickerIOS: wrap(ReactNative.DatePickerIOS),
   DrawerLayoutAndroid: wrap(ReactNative.DrawerLayoutAndroid),
   Image: wrap(ReactNative.Image),
+  ImageEditor: wrap(ReactNative.ImageEditor),
+  ImageStore: wrap(ReactNative.ImageStore),
   KeyboardAvoidingView: wrap(ReactNative.KeyboardAvoidingView),
   ListView: wrap(ReactNative.ListView),
   MapView: wrap(ReactNative.MapView),
@@ -31,15 +34,15 @@ module.exports = {
   ScrollView: wrap(ReactNative.ScrollView),
   SegmentedControlIOS: wrap(ReactNative.SegmentedControlIOS),
   Slider: wrap(ReactNative.Slider),
-  SliderIOS: wrap(ReactNative.SliderIOS),
+  SliderIOS: wrap(ReactNative.SliderIOS), // To support older RN
   SnapshotViewIOS: wrap(ReactNative.SnapshotViewIOS),
   Switch: wrap(ReactNative.Switch),
   RecyclerViewBackedScrollView: wrap(ReactNative.RecyclerViewBackedScrollView),
   RefreshControl: wrap(ReactNative.RefreshControl),
   StatusBar: wrap(ReactNative.StatusBar),
   SwipeableListView: wrap(ReactNative.SwipeableListView),
-  SwitchAndroid: wrap(ReactNative.SwitchAndroid),
-  SwitchIOS: wrap(ReactNative.SwitchIOS),
+  SwitchAndroid: wrap(ReactNative.SwitchAndroid), // To support older RN
+  SwitchIOS: wrap(ReactNative.SwitchIOS), // To support older RN
   TabBarIOS: wrap(ReactNative.TabBarIOS),
   Text: wrap(ReactNative.Text),
   TextInput: wrap(ReactNative.TextInput),
