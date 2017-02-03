@@ -89,16 +89,16 @@ The default behaviour is no animation, but configuring one is recommended to avo
 
 #### Make your custom components responsive
 
-To add support for orientation-specific styles to your own components or other third-party components, wrap them in a higher-order component with `makeResponsive`:
+To add support for orientation-specific styles to your own components or other third-party components, wrap them in a higher-order component with `StyleSheet.makeResponsive`:
 ```js
 import React from 'react';
-import { makeResponsive } from 'react-native-responsive-styles';
+import StyleSheet from 'react-native-responsive-styles';
 
 class CustomComponent extends React.Component({
   //...
 });
 
-export default makeResponsive(CustomComponent);
+export default StyleSheet.makeResponsive(CustomComponent);
 ```
 
 In most cases this should not be required. You can simply nest your component in a responsive `View`.
