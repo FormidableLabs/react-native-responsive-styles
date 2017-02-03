@@ -1,6 +1,6 @@
 {
   "name": "react-native-responsive-styles",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "React Native styles that respond to device orientation change",
   "keywords": [
     "react",
