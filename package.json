@@ -28,7 +28,7 @@
     "test": "npm run lint && npm run flow"
   },
   "dependencies": {
-    "react-native-orientation-listener": "0.0.4"
+    "react-native-orientation": "git://github.com/BonifyByForteil/react-native-orientation.git#newRN"
   },
   "devDependencies": {
     "babel-eslint": "^6.0.2",

@@ -24,9 +24,9 @@ Installation:
 npm i --save react-native-responsive-styles
 ```
 
-This library depends on [walmartlabs/react-native-orientation-listener](https://github.com/walmartlabs/react-native-orientation-listener), which contains native dependencies for iOS and Android. Link them with:
+This library depends on [yamill/react-native-orientation](https://github.com/yamill/react-native-orientationgi), which contains native dependencies for iOS and Android. Link them with:
 ```
-react-native link react-native-orientation-listener
+react-native link react-native-orientation
 ```
 
 You can now import `StyleSheet` and any React components from `react-native-responsive-styles` instead of `react-native`:
