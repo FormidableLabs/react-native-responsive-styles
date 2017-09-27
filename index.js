@@ -1,6 +1,7 @@
 // @flow
 
 import ReactNative from 'react-native';
+import Navigator from 'react-native-deprecated-custom-components';
 
 import configureLayoutAnimation from './lib/configureLayoutAnimation';
 import createResponsiveComponent from './lib/createResponsiveComponent';
@@ -25,6 +26,7 @@ module.exports = {
   ListView: wrap(ReactNative.ListView),
   MapView: wrap(ReactNative.MapView),
   Modal: wrap(ReactNative.Modal),
+  Navigator: wrap(Navigator),
   NavigatorIOS: wrap(ReactNative.NavigatorIOS),
   Picker: wrap(ReactNative.Picker),
   PickerIOS: wrap(ReactNative.PickerIOS),
