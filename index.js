@@ -25,7 +25,6 @@ module.exports = {
   ListView: wrap(ReactNative.ListView),
   MapView: wrap(ReactNative.MapView),
   Modal: wrap(ReactNative.Modal),
-  Navigator: wrap(ReactNative.Navigator),
   NavigatorIOS: wrap(ReactNative.NavigatorIOS),
   Picker: wrap(ReactNative.Picker),
   PickerIOS: wrap(ReactNative.PickerIOS),
