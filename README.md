@@ -9,6 +9,9 @@
   </a>
   <img src='https://img.shields.io/badge/android-supported-brightgreen.svg' />
   <img src='https://img.shields.io/badge/iOS-supported-brightgreen.svg' />
+   <a href="https://github.com/FormidableLabs/react-native-responsive-styles#maintenance-status">
+    <img alt="Maintenance Status" src="https://img.shields.io/badge/maintenance-archived-red.svg" />
+  </a>
 </p>
 
 <h4 align="center">
@@ -118,6 +121,10 @@ const styles = StyleSheet.create({
 ### Please note
 
 This project is in a pre-release state. The API may be considered relatively stable, but changes may still occur.
+
+### Maintenance Status
+
+**Archived:** This project is no longer maintained by Formidable. We are no longer responding to issues or pull requests unless they relate to security concerns. We encourage interested developers to fork this project and make it their own!
 
 [MIT licensed](LICENSE)
 
